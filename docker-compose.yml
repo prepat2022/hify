@@ -7,7 +7,7 @@ services:
     image: hify-backend:latest
     restart: unless-stopped
     environment:
-      SERVER_PORT: 8080
+      SERVER_PORT: 8090
       JVM_OPTS: ${JVM_OPTS:--Xms256m -Xmx512m}
       # MySQL
       DB_HOST:     ${DB_HOST}
@@ -26,13 +26,13 @@ services:
       PGVECTOR_USERNAME: ${PGVECTOR_USERNAME}
       PGVECTOR_PASSWORD: ${PGVECTOR_PASSWORD}
     ports:
-      - "${BACKEND_EXPOSE_PORT:-8080}:8080"
+      - "${BACKEND_EXPOSE_PORT:-8090}:8090"
     volumes:
       - ./logs:/app/logs
       # 外部 application.yml 覆盖内置配置（可选，不挂载也能启动）
       - ./deploy/application.yml.template:/app/config/application.yml:ro
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:8080/api/v1/health"]
+      test: ["CMD", "wget", "-qO-", "http://localhost:8090/api/v1/health"]
       interval: 30s
       timeout: 5s
       start_period: 60s
