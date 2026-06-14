@@ -1,16 +1,27 @@
-# Compiled class files
+# Maven / Java build output
+**/target/
 *.class
-
-# JAR files
 *.jar
+*.war
+*.ear
 
-# Maven build directory
-target/
-
-# IDE files
+# IDE / editor files
 .idea/
 *.iml
+*.ipr
+*.iws
 .vscode/settings.json
+
+# Node modules and lockfile artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Logs
 *.log

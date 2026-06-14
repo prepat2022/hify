@@ -36,7 +36,7 @@ spec:
           image: hify-backend:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 8090
 
           # ── 环境变量：非敏感配置来自 ConfigMap ───────────────
           envFrom:
@@ -80,7 +80,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /api/v1/health
-              port: 8080
+              port: 8090
             initialDelaySeconds: 20
             periodSeconds: 10
             failureThreshold: 3
@@ -89,7 +89,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /api/v1/health
-              port: 8080
+              port: 8090
             initialDelaySeconds: 60   # 给 Spring Boot 足够启动时间
             periodSeconds: 20
             failureThreshold: 3

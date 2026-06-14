@@ -7,7 +7,7 @@ LOG_FILE="$ROOT_DIR/logs/hify.log"
 JAR="$ROOT_DIR/hify-app.jar"
 CONFIG="$ROOT_DIR/application.yml"
 
-BACKEND_PORT="${SERVER_PORT:-8080}"
+BACKEND_PORT="${SERVER_PORT:-8090}"
 HEALTH_URL="http://localhost:${BACKEND_PORT}/api/v1/health"
 HEALTH_TIMEOUT=90
 
@@ -52,7 +52,7 @@ fi
 JVM_OPTS="${JVM_OPTS:--Xms256m -Xmx512m}"
 
 SPRING_ARGS=(
-  "--server.port=${SERVER_PORT:-8080}"
+  "--server.port=${SERVER_PORT:-8090}"
 )
 
 # 外部 application.yml 优先级高于 jar 内置配置
