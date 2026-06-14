@@ -1,0 +1,16 @@
+# Compiled class files
+*.class
+
+# JAR files
+*.jar
+
+# Maven build directory
+target/
+
+# IDE files
+.idea/
+*.iml
+.vscode/settings.json
+
+# Logs
+*.log
